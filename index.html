@@ -18,30 +18,8 @@
 
         <!--Menu Icon-->
         <header class="topbar">
-            <div class="menu-icon" onclick="toggleMenu()">
-                ☰
-            </div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
         </header>
-
-        <!--Introduction-->
-        <div class="introduction">
-            <img src="descargar-photo.jpeg" class="profile">
-
-            <h1> Matt Andrei Descargar </h1>
-
-            <p> Matt here! Thanks for dropping by my portfolio. It’s a small space where I put some of the things I’ve worked on 
-                and messed around with.
-            </p>
-
-            <p>
-                Just to tell you a bit about myself. I’m 27 years old, I studied Information Technology, and I like learning about 
-                new stuff.
-            </p>
-
-            <p>
-                Click the icon on the top left to know more!
-            </p>
-        </div>
 
         <!--Menu Overlay-->
         <div id="menu" class="menu">
@@ -51,18 +29,88 @@
             </div>
 
             <div class="menu-content">
-                <a href="#">Educational Background</a>
-                <a href="#">Skills</a>
-                <a href="#">Experience</a>
-                <a href="#">Works</a>
+                <a href="#" onclick="showPage('intro')">Introduction</a>
+                <a href="#" onclick="showPage('education')">Educational Background</a>
+                <a href="#" onclick="showPage('experience')">Experience & Skills</a>
+                <a href="#" onclick="showPage('works')">Works</a>
             </div>
         </div>    
 
+        <!--Pages-->
+
+        <!--Introduction-->
+        <div id="intro" class="page active">
+            <div class="introduction">
+                <img src="images/descargar-photo.jpeg" class="profile">
+        
+                <h1> Matt Andrei Descargar </h1>
+        
+                <p> Matt here! Thanks for dropping by my portfolio. It’s a small space where I put some of the things I’ve worked on 
+                    and messed around with.
+                </p>
+        
+                <p>
+                    Just to tell you a bit about myself. I’m 27 years old, I studied Information Technology, and I like learning about 
+                    new stuff.
+                </p>
+        
+                <p>
+                    Click the icon on the top left to know more!
+                </p>
+            </div>
+        </div>
+
+        <!-- EDUCATION -->
+    <div id="education" class="page">
+        <div class="education">
+            <img src="images/slc-logo.jpg" class="school-logo">
+
+            <!-- Group 1 -->
+            <section class="info-group center">
+                <div class="title">Saint Louis College</div>
+                <div class="title">Bachelor of Science in Information Technology</div>
+                <div class="text">San Fernando, La Union</div>
+            </section>
+
+            <!-- Group 2 -->
+            <section class="info-group center">
+                <div class="title">Capstone Project:</div>
+                <div class="text">Alumni Tracer System for Saint Louis College Basic Education Schools</div>
+            </section>
+
+            <!-- Group 3 -->
+            <section class="info-group">
+                <div class="title center">Contributions:</div>
+
+                <ul class="list">
+                    <li>Contributed to the development of various parts of the system, including landing page, login form, gallery, and events list.</li>
+                    <li>Worked on documentation such as IPO Model, Top-Level Diagram, ERD, Situational Analysis, and Abstract.</li>
+                </ul>
+            </section>
+
+        </div>
+
+    </div>
+        
         <script>
             function toggleMenu() {
                 document.getElementById("menu").classList.toggle("active");
             }
-        </script>
+
+            function showPage(pageId) {
+                //hide all pages
+                document.querySelectorAll(".page").forEach(page => {
+                    page.classList.remove("active");
+                });
+
+                //show selected page
+                document.getElementById(pageId).classList.add("active");
+                //close menu after click
+                document.getElementById("menu").classList.remove("active");
+            }
+
+
+            </script>
 
     </body>
 </html>
