@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #ffe88a; /* your yellow background */
+    color: black;
+    overflow-x: hidden;
+  }
+  
+  /* TOPBAR */
+  .topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    z-index: 1000;
+  }
+
+  .menu-icon {
+    font-size: 50px;
+    cursor: pointer;
+  }
+  
+  /* INTRODUCTION LAYOUT */
+  .introduction {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 90px 20px 40px 20px;
+  }
+  
+  .profile {
+    width: 170px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 10px auto;
+  }
+  
+  /* TYPOGRAPHY */
+  h1 {
+    text-align: center;
+    font-size: 75px;
+    margin: 0 0 15px 0;
+  }
+  
+  p {
+    font-size: 26px;
+    line-height: 1.6;
+  }
+  
+  .hint {
+    margin-top: 30px;
+    font-weight: bold;
+  }
+  
+  /*MENU OVERLAY */
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #F0D53C;
+  
+    display: flex;
+    flex-direction: column;
+    z-index: 2000;
+  
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+  }
+  
+  .menu.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  /* TOP AREA (X BUTTON) */
+  .menu-header {
+    height: 80px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 30px;
+  }
+  
+  /* CLOSE BUTTON */
+  .close-btn {
+    font-size: 40px;
+    color: black;
+    cursor: pointer;
+  }
+  
+  /* MENU CONTENT */
+  .menu-content {
+    flex: 1; /* takes remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* keeps menu centered vertically */
+    align-items: flex-start;
+    padding-left: 60px;
+  }
+  
+  /* LINKS */
+  .menu a {
+    color: black;
+    font-size: 120px;
+    text-decoration: none;
+    margin: 10px 0;
+  }

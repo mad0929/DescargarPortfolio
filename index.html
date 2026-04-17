@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1">
+        <title> Matt Descargar</title>
+
+        <!--My CSS-->
+        <link rel="stylesheet" href="styles.css">
+
+        <!--Font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!--Menu Icon-->
+        <header class="topbar">
+            <div class="menu-icon" onclick="toggleMenu()">
+                ☰
+            </div>
+        </header>
+
+        <!--Introduction-->
+        <div class="introduction">
+            <img src="descargar-photo.jpeg" class="profile">
+
+            <h1> Matt Andrei Descargar </h1>
+
+            <p> Matt here! Thanks for dropping by my portfolio. It’s a small space where I put some of the things I’ve worked on 
+                and messed around with.
+            </p>
+
+            <p>
+                Just to tell you a bit about myself. I’m 27 years old, I studied Information Technology, and I like learning about 
+                new stuff.
+            </p>
+
+            <p>
+                Click the icon on the top left to know more!
+            </p>
+        </div>
+
+        <!--Menu Overlay-->
+        <div id="menu" class="menu">
+
+            <div class="menu-header">
+                <div class="close-btn" onclick="toggleMenu()">✕</div>
+            </div>
+
+            <div class="menu-content">
+                <a href="#">Educational Background</a>
+                <a href="#">Skills</a>
+                <a href="#">Experience</a>
+                <a href="#">Works</a>
+            </div>
+        </div>    
+
+        <script>
+            function toggleMenu() {
+                document.getElementById("menu").classList.toggle("active");
+            }
+        </script>
+
+    </body>
+</html>
