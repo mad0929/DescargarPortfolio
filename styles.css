@@ -113,3 +113,41 @@ body {
     text-decoration: none;
     margin: 10px 0;
   }
+
+  @media (max-width: 768px) {
+
+    .introduction {
+      padding: 80px 16px 40px 16px;
+    }
+  
+    .profile {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 10px;
+    }
+  
+    h1 {
+      font-size: 36px;
+    }
+  
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+  
+    .menu a {
+      font-size: 48px;
+    }
+  
+    .menu-content {
+      padding-left: 30px;
+    }
+  
+    .topbar-title {
+      font-size: 16px;
+    }
+  
+    .menu-icon {
+      font-size: 26px;
+    }
+  }
