@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
-    background: #ffe88a; /* your yellow background */
+    background: #ffe88a;
     color: black;
     overflow-x: hidden;
   }
@@ -102,11 +102,88 @@ body {
       .list {
         font-size: 26px;
         padding-left: 20px;
-        margin: 0;
+        margin: 10px 0 0 0;
       }
       
       .list li {
         margin-bottom: 4px;
+      }
+
+      /* EXPERIENCE LAYOUT */
+
+      .es-layout {
+        display: flex;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 90px 20px 40px;
+        align-items: flex-start;
+      }
+
+      .experience {
+        display: flex;
+        flex:2;
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+        /* padding: 100px 20px 30px 20px; */
+        padding: 0;
+      }
+
+      #experience {
+        position: relative;
+        background-color: #ffe88a;
+        overflow: hidden;
+      }
+      
+      #experience::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("images/experience-bg2.png") center/cover no-repeat;
+        opacity: 0.1;
+        pointer-events: none;
+      }    
+
+      .card {
+        width: 100%;
+        /* max-width: 900px; */
+        padding: 20px;
+        border-radius: 12px;
+        background: white;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        box-sizing: border-box;
+
+      }
+
+      .skills {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 250px;
+      }
+      
+      .skills .card {
+        height: fit-content;
+        padding-left: 30px;
+        font-size: 20px;
+      }
+
+      .meta-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+      
+      .company {
+        font-size: 26px;
+      }
+      
+      .date {
+        font-size: 26px;
       }
       
   /* TYPOGRAPHY */
@@ -167,10 +244,10 @@ body {
   
   /* MENU CONTENT */
   .menu-content {
-    flex: 1; /* takes remaining space */
+    flex: 1; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* keeps menu centered vertically */
+    justify-content: center; 
     align-items: flex-start;
     padding-left: 60px;
   }
