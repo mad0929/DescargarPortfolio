@@ -326,6 +326,33 @@
             if (e.target === this) closeGallery();
             }
 
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            const modal = document.getElementById("galleryModal");
+
+            modal.addEventListener("touchstart", (e) => {
+              touchStartX = e.changedTouches[0].screenX;
+            });
+
+            modal.addEventListener("touchend", (e) => {
+              touchEndX = e.changedTouches[0].screenX;
+              handleSwipe();
+            });
+
+            function handleSwipe() {
+              const swipeDistance = touchEndX - touchStartX;
+
+              // ignore small accidental swipes
+              if (Math.abs(swipeDistance) < 50) return;
+
+              if (swipeDistance > 0) {
+                changeSlide(-1); // swipe right → previous
+              } else {
+                changeSlide(1); // swipe left → next
+              }
+            }
+
 
             //Contact Script    
             function toggleContact() {
