@@ -16,9 +16,10 @@
 
     <body>
 
-        <!--Menu Icon-->
+        <!--Topbar-->
         <header class="topbar">
             <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <span id="pageTitle">Introduction</span>
         </header>
 
         <!--Menu Overlay-->
@@ -29,10 +30,14 @@
             </div>
 
             <div class="menu-content">
-                <a href="#" onclick="showPage('intro')">Introduction</a>
-                <a href="#" onclick="showPage('education')">Educational Background</a>
-                <a href="#" onclick="showPage('experience')">Experience & Skills</a>
-                <a href="#" onclick="showPage('works')">Works</a>
+                <a href="#" onclick="showPage('intro', 'Introduction')">Introduction</a>
+                <a href="#" onclick="showPage('education', 'Educational Background')">Educational Background</a>
+                <a href="#" onclick="showPage('experience', 'Experience & Skills')">Experience & Skills</a>
+                <a href="#" onclick="showPage('works', 'Works')">Works</a>
+            </div>
+
+            <div class="menu-footer">
+                <a href="https://www.linkedin.com/in/mad0929/" target="_blank">https://www.linkedin.com/in/mad0929/</a>
             </div>
         </div>    
 
@@ -96,12 +101,6 @@
     <!-- EXPERIENCE AND SKILLS LAYOUT-->
     <div class="es-layout">
     <div class="experience">
-
-      <div class="card">
-        <div class="card-content">
-        <div class="htitle">Work Experience</div>
-      </div>
-      </div>
 
       <div class="card">
         <img src="images/sitel-logo.png" class="company-logo">
@@ -171,8 +170,6 @@
 <div class="skills">
     <div class="card skills-card">
   
-      <h3>Skills</h3>
-  
       <div class="skills-list">
   
         <div class="skill-item">
@@ -213,13 +210,61 @@
   </div>
 
     </div>
+
+    <div id="works" class="page">
+        <div class="works">
+          <div class="works-grid">
+            
+            <!-- Project 1 -->
+            <div class="work-card" onclick="openGallery(0)">
+              <img src="images/recipe-1.jpg" class="work-thumb">
+              <div class="work-title">Lead Magnet Sample</div>
+            </div>
+      
+            <!-- Project 2 -->
+            <div class="work-card" onclick="openGallery(1)">
+              <img src="images/prism.jpg" class="work-thumb">
+              <div class="work-title">Wee Wipes Product Infographic</div>
+            </div>
+
+             <!-- Project 3 -->
+            <div class="work-card" onclick="openGallery(2)">
+                <img src="images/mag-1.png" class="work-thumb">
+                <div class="work-title">Magazine Spread Sample</div>
+            </div>
+      
+          </div>
+      
+        </div>
+      </div>
+
+      <!-- GALLERY MODAL -->
+    <div id="galleryModal" class="modal">
+        <span class="close" onclick="closeGallery()">✕</span>
+  
+        <img id="galleryImage" class="modal-img">
+  
+        <div class="nav prev" onclick="changeSlide(-1)">❮</div>
+        <div class="nav next" onclick="changeSlide(1)">❯</div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-fab" onclick="toggleContact()">
+        ✉
+      </div>
+      
+      <div id="contactPanel" class="contact-panel">
+        <a href="mailto:mattandreidescargar@email.com">Email</a>
+        <a href="https://www.linkedin.com/in/mad0929/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/mad0929/" target="_blank">GitHub</a>
+      </div>
         
         <script>
             function toggleMenu() {
                 document.getElementById("menu").classList.toggle("active");
             }
 
-            function showPage(pageId) {
+            function showPage(pageId, title) {
                 //hide all pages
                 document.querySelectorAll(".page").forEach(page => {
                     page.classList.remove("active");
@@ -229,8 +274,63 @@
                 document.getElementById(pageId).classList.add("active");
                 //close menu after click
                 document.getElementById("menu").classList.remove("active");
+
+                document.getElementById('pageTitle').textContent = title;
             }
 
+            const galleries = [
+            [
+                "images/recipe-1.jpg",
+                "images/recipe-2.jpg",
+                "images/recipe-3.jpg"
+            ],
+            [
+                "images/prism.jpg"
+            ],
+            [
+                "images/mag-1.png",
+                "images/mag-2.png",
+                "images/mag-3.png"
+            ]
+            ];
+
+            let currentGallery = [];
+            let currentIndex = 0;
+
+            function openGallery(galleryIndex) {
+            currentGallery = galleries[galleryIndex];
+            currentIndex = 0;
+
+            document.getElementById("galleryModal").style.display = "flex";
+            showImage();
+            }
+
+            function closeGallery() {
+            document.getElementById("galleryModal").style.display = "none";
+            }
+
+            function changeSlide(direction) {
+            currentIndex += direction;
+
+            if (currentIndex < 0) currentIndex = currentGallery.length - 1;
+            if (currentIndex >= currentGallery.length) currentIndex = 0;
+
+            showImage();
+            }
+
+            function showImage() {
+            document.getElementById("galleryImage").src = currentGallery[currentIndex];
+            }
+
+            document.getElementById("galleryModal").onclick = function(e) {
+            if (e.target === this) closeGallery();
+            }
+
+
+            //Contact Script    
+            function toggleContact() {
+            document.getElementById("contactPanel").classList.toggle("active");
+            }
 
             </script>
 
