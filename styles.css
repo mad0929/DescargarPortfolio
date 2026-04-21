@@ -466,6 +466,13 @@ body {
   z-index: 999;
 }
 
+.fab-icon {
+  width: 26px;
+  height: 26px;
+  stroke: white;
+  stroke-width: 2;
+}
+
 .contact-fab:hover {
   transform: scale(1.1);
   opacity: 0.8;
@@ -554,6 +561,11 @@ body {
       font-size: 26px;
       bottom: 16px;
       right: 16px;
+    }
+
+    .fab-icon {
+      width: 34px;
+      height: 34px;
     }
 
     #pageTitle {
